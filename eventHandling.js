@@ -46,3 +46,13 @@ text.addEventListener("keydown", (event) => console.log(`Key Down: ${event.key}`
 text.addEventListener("keyup", (event) => console.log(`key Released: ${event.key}`));
 //text.addEventListener("keyup", () => console.log("Key Up"));
 
+var checkBox = document.getElementById("check");
+
+// checkBox.addEventListener("click", (event) => {event.preventDefault()});
+checkBox.addEventListener("click", (event) => console.log(`Checkbox: ${event.target.checked}`));
+
+function HandleSubmit(event){
+    event.preventDefault();
+    console.log("Form Submitted!");
+    console.log(document.getElementById("select").value);
+}
