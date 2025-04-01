@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practise</title>
+    
+    <style>
+        #menu {
+          width: 200px;
+          height: 100px;
+          background-color: lightblue;
+          position: absolute;
+          top: 50px;
+          left: 50px;
+          border: 1px solid black;
+          display: none; /* Initially hide the menu */
+        }
+      </style>
+</head>
+<body>
+    <nav id="menuTrigger">
+        <button id="menuButton">Menu</button>
+        <br>
+    </nav>
+    <div id="menu">
+        This is the menu content.
+    </div>
+    <br>
+    <input type="text" name="text" id="text">
+    <br><br>
+    <textarea name="textarea" id="textarea"></textarea>
+    <script src="eventHandling.js"></script>
+    <script>
+        // console.log(document.getElementById("menu"), document.getElementById("menuTrigger"));
+        console.log(window.location.href, window.location.hostname);
+    </script>
+</body>
+</html>
