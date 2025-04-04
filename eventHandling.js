@@ -54,5 +54,35 @@ checkBox.addEventListener("click", (event) => console.log(`Checkbox: ${event.tar
 function HandleSubmit(event){
     event.preventDefault();
     console.log("Form Submitted!");
+    // To Display the Option that was selected in the dropdown menu.
+    var submitedValue = document.getElementById("select").value;
+    console.log(document.querySelector(`option[value="${submitedValue}"]`).innerText);
+    // console.log(document.getElementById("select").innerText);
+}
+
+var testButton = document.querySelector("#testButton");
+testButton.addEventListener("click", (event) => testButtonClick(event), {once: true,passive: false});
+function testButtonClick(event){
+    event.preventDefault();
+    console.log("Test Button Clicked! - Limited to once");
     console.log(document.getElementById("select").value);
 }
+testButton.addEventListener("click", ()=> console.log("Clicked Me!"));
+
+var category = document.getElementById("category-filter");
+var productList = document.querySelectorAll(".product");
+category.addEventListener("change", (event) => {
+    let selectedCategory = event.target.value;
+    productList.forEach((product) => {
+        let productName = product.getAttribute("data-category");
+        if (selectedCategory === "all" || productName === selectedCategory){
+            product.style.display = "block";
+        } else{
+            product.style.display = "none";
+        }
+    })
+});
+
+// Event Bubbling in DOM 
+var body = document.getElementsByTagName("body")[0];
+body.addEventListener("click", (event) => console.log("body Clicked"));
